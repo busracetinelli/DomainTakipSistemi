@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DomainTakipSistemiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DomainKayit">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Proje_Adi" Type="nvarchar" MaxLength="200" />
+          <Property Name="Proje_Tip_Id" Type="int" />
+          <Property Name="Yenileme_Periyodu" Type="int" />
+          <Property Name="Domain_Adi" Type="nvarchar" MaxLength="200" />
+          <Property Name="Domain_Bitis_Tarihi" Type="date" />
+          <Property Name="Domain_Fiyati" Type="float" />
+          <Property Name="Sunucu" Type="nvarchar" MaxLength="200" />
+          <Property Name="Sunucu_Bitis_Tarihi" Type="date" />
+          <Property Name="Sunucu_Fiyati" Type="float" />
+          <Property Name="SSL" Type="bit" />
+          <Property Name="SSL_Bitis_Tarihi" Type="date" />
+          <Property Name="SSL_Fiyati" Type="float" />
+          <Property Name="Statik_IP" Type="nvarchar" MaxLength="20" />
+          <Property Name="Statik_IP_Bitis_Tarihi" Type="date" />
+          <Property Name="Statik_IP_Fiyati" Type="float" />
+          <Property Name="Metin" Type="nvarchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="Proje_Tipleri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Proje_Tipi" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="DomainTakipSistemiModelStoreContainer">
+          <EntitySet Name="DomainKayit" EntityType="Self.DomainKayit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proje_Tipleri" EntityType="Self.Proje_Tipleri" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DomainTakipSistemiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DomainKayit">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Proje_Adi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Proje_Tip_Id" Type="Int32" />
+          <Property Name="Yenileme_Periyodu" Type="Int32" />
+          <Property Name="Domain_Adi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Domain_Bitis_Tarihi" Type="DateTime" Precision="0" />
+          <Property Name="Domain_Fiyati" Type="Double" />
+          <Property Name="Sunucu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Sunucu_Bitis_Tarihi" Type="DateTime" Precision="0" />
+          <Property Name="Sunucu_Fiyati" Type="Double" />
+          <Property Name="SSL" Type="Boolean" />
+          <Property Name="SSL_Bitis_Tarihi" Type="DateTime" Precision="0" />
+          <Property Name="SSL_Fiyati" Type="Double" />
+          <Property Name="Statik_IP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Statik_IP_Bitis_Tarihi" Type="DateTime" Precision="0" />
+          <Property Name="Statik_IP_Fiyati" Type="Double" />
+          <Property Name="Metin" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Proje_Tipleri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Proje_Tipi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DomainTakipSistemiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DomainKayit" EntityType="Self.DomainKayit" />
+          <EntitySet Name="Proje_Tipleri" EntityType="Self.Proje_Tipleri" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DomainTakipSistemiModelStoreContainer" CdmEntityContainer="DomainTakipSistemiEntities">
+          <EntitySetMapping Name="DomainKayit">
+            <EntityTypeMapping TypeName="DomainTakipSistemiModel.DomainKayit">
+              <MappingFragment StoreEntitySet="DomainKayit">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Proje_Adi" ColumnName="Proje_Adi" />
+                <ScalarProperty Name="Proje_Tip_Id" ColumnName="Proje_Tip_Id" />
+                <ScalarProperty Name="Yenileme_Periyodu" ColumnName="Yenileme_Periyodu" />
+                <ScalarProperty Name="Domain_Adi" ColumnName="Domain_Adi" />
+                <ScalarProperty Name="Domain_Bitis_Tarihi" ColumnName="Domain_Bitis_Tarihi" />
+                <ScalarProperty Name="Domain_Fiyati" ColumnName="Domain_Fiyati" />
+                <ScalarProperty Name="Sunucu" ColumnName="Sunucu" />
+                <ScalarProperty Name="Sunucu_Bitis_Tarihi" ColumnName="Sunucu_Bitis_Tarihi" />
+                <ScalarProperty Name="Sunucu_Fiyati" ColumnName="Sunucu_Fiyati" />
+                <ScalarProperty Name="SSL" ColumnName="SSL" />
+                <ScalarProperty Name="SSL_Bitis_Tarihi" ColumnName="SSL_Bitis_Tarihi" />
+                <ScalarProperty Name="SSL_Fiyati" ColumnName="SSL_Fiyati" />
+                <ScalarProperty Name="Statik_IP" ColumnName="Statik_IP" />
+                <ScalarProperty Name="Statik_IP_Bitis_Tarihi" ColumnName="Statik_IP_Bitis_Tarihi" />
+                <ScalarProperty Name="Statik_IP_Fiyati" ColumnName="Statik_IP_Fiyati" />
+                <ScalarProperty Name="Metin" ColumnName="Metin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proje_Tipleri">
+            <EntityTypeMapping TypeName="DomainTakipSistemiModel.Proje_Tipleri">
+              <MappingFragment StoreEntitySet="Proje_Tipleri">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Proje_Tipi" ColumnName="Proje_Tipi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DomainTakipSistemiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DomainKayit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Proje_Adi" Type="nvarchar" MaxLength="200" />
+    <Property Name="Proje_Tipleri" Type="nvarchar" MaxLength="200" />
+    <Property Name="Yenileme_Periyodu" Type="int" />
+    <Property Name="Domain_Adi" Type="nvarchar" MaxLength="200" />
+    <Property Name="Domain_Bitis_Tarihi" Type="date" />
+    <Property Name="Domain_Fiyati" Type="float" />
+    <Property Name="Sunucu" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sunucu_Bitis_Tarihi" Type="date" />
+    <Property Name="Sunucu_Fiyati" Type="float" />
+    <Property Name="SSL" Type="bit" />
+    <Property Name="SSL_Bitis_Tarihi" Type="date" />
+    <Property Name="SSL_Fiyati" Type="float" />
+    <Property Name="Statik_IP" Type="nvarchar" MaxLength="20" />
+    <Property Name="Statik_IP_Bitis_Tarihi" Type="date" />
+    <Property Name="Statik_IP_Fiyati" Type="float" />
+    <Property Name="Metin" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityContainer Name="DomainTakipSistemiModelStoreContainer">
+    <EntitySet Name="DomainKayit" EntityType="Self.DomainKayit" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

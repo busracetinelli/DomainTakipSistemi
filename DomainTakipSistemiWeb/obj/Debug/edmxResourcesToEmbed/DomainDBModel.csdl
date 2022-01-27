@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DomainTakipSistemiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DomainKayit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Proje_Adi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Proje_Tipleri" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Yenileme_Periyodu" Type="Int32" />
+    <Property Name="Domain_Adi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Domain_Bitis_Tarihi" Type="DateTime" Precision="0" />
+    <Property Name="Domain_Fiyati" Type="Double" />
+    <Property Name="Sunucu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sunucu_Bitis_Tarihi" Type="DateTime" Precision="0" />
+    <Property Name="Sunucu_Fiyati" Type="Double" />
+    <Property Name="SSL" Type="Boolean" />
+    <Property Name="SSL_Bitis_Tarihi" Type="DateTime" Precision="0" />
+    <Property Name="SSL_Fiyati" Type="Double" />
+    <Property Name="Statik_IP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Statik_IP_Bitis_Tarihi" Type="DateTime" Precision="0" />
+    <Property Name="Statik_IP_Fiyati" Type="Double" />
+    <Property Name="Metin" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="DomainTakipSistemiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DomainKayit" EntityType="Self.DomainKayit" />
+  </EntityContainer>
+</Schema>

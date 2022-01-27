@@ -1,0 +1,148 @@
+﻿
+@model DomainTakipSistemiWeb.DTO.ViewModel.indexViewModel
+@{
+    ViewBag.Title = "index";
+    //Layout = null;
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Projeler</h6>
+                </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+                <div class="table-responsive p-0">
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Güncelle</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sil</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Proje</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tipi</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Yenileme Periyodu</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Domain</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Domain B. Süresi</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Domein Fiyat</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sunucu</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sunucu B. Tarihi</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sunucu Fiyat</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">SSL</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">SSL B. Tarihi</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">SSL Fiyat</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Statik IP</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Statik Bitiş Tarihi</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Statik Fiyatı</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Not</th>
+
+                                <th class="text-secondary opacity-7"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ProjeDtos)
+                            {
+                                <tr>
+                                    <td class="align-middle text-center text-sm">
+                                        <a href="/Home/Edit?Id=@item.id" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                            Edit
+                                        </a>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <button type="submit" value="@item.id" class="form-control deleteProject">Sil</button>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Proje_Adi</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Proje_Tipleri</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Yenileme_Periyodu</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Domain_Adi</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Domain_Bitis_Tarihi</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Domain_Fiyati</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Sunucu</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Sunucu_Bitis_Tarihi</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Sunucu_Fiyati</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.SSL</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.SSL_Bitis_Tarihi</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.SSL_Fiyati</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Statik_IP</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Statik_IP_Bitis_Tarihi</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Statik_IP_Fiyati</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-xs font-weight-bold mb-0">@item.Metin</p>
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $(".deleteProject").on("click", function () {
+            console.log("burda", this.value);
+            $.ajax({
+                type: "POST",
+                url: ("/Home/Delete"),
+                dataType: "json",
+                data: {
+                    id: this.value
+                },
+                success: function (data, textStatus) {
+                    console.log("succes")
+                    location.reload(true);
+                    Swal.fire({
+                        icon: 'success',
+                        confirmButtonText: 'Tamam',
+                        title: 'Ürün Silindi'
+                    });
+                },
+                error: function (data, textStatus) {
+                    console.log("erro");
+                    Swal.fire({
+                        icon: 'error',
+                        confirmButtonText: 'Tamam',
+                        title: 'Ürün Silinemedi'
+                    });
+                }
+            });
+        });
+    });
+</script>

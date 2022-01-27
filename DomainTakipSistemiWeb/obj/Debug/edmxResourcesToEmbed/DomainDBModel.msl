@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DomainTakipSistemiModelStoreContainer" CdmEntityContainer="DomainTakipSistemiEntities">
+    <EntitySetMapping Name="DomainKayit">
+      <EntityTypeMapping TypeName="DomainTakipSistemiModel.DomainKayit">
+        <MappingFragment StoreEntitySet="DomainKayit">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Proje_Adi" ColumnName="Proje_Adi" />
+          <ScalarProperty Name="Proje_Tipleri" ColumnName="Proje_Tipleri" />
+          <ScalarProperty Name="Yenileme_Periyodu" ColumnName="Yenileme_Periyodu" />
+          <ScalarProperty Name="Domain_Adi" ColumnName="Domain_Adi" />
+          <ScalarProperty Name="Domain_Bitis_Tarihi" ColumnName="Domain_Bitis_Tarihi" />
+          <ScalarProperty Name="Domain_Fiyati" ColumnName="Domain_Fiyati" />
+          <ScalarProperty Name="Sunucu" ColumnName="Sunucu" />
+          <ScalarProperty Name="Sunucu_Bitis_Tarihi" ColumnName="Sunucu_Bitis_Tarihi" />
+          <ScalarProperty Name="Sunucu_Fiyati" ColumnName="Sunucu_Fiyati" />
+          <ScalarProperty Name="SSL" ColumnName="SSL" />
+          <ScalarProperty Name="SSL_Bitis_Tarihi" ColumnName="SSL_Bitis_Tarihi" />
+          <ScalarProperty Name="SSL_Fiyati" ColumnName="SSL_Fiyati" />
+          <ScalarProperty Name="Statik_IP" ColumnName="Statik_IP" />
+          <ScalarProperty Name="Statik_IP_Bitis_Tarihi" ColumnName="Statik_IP_Bitis_Tarihi" />
+          <ScalarProperty Name="Statik_IP_Fiyati" ColumnName="Statik_IP_Fiyati" />
+          <ScalarProperty Name="Metin" ColumnName="Metin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,135 @@
+﻿@model DomainTakipSistemiWeb.DTO.ViewModel.EditViewModel
+
+<form action="/Home/Edit" method="post">
+    <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Düzenleme</h4>
+
+        <hr class="my-4">
+
+
+        <form class="needs-validation" novalidate="">
+            <input type="hidden" name="id" value="@Model.ProjeDto.id" />
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label for="Proje_Adi" class="form-label">Proje Adı</label>
+                    <input type="text" class="form-control" id="Proje_Adi" name="Proje_Adi" value="@Model.ProjeDto.Proje_Adi" style="background-color:rgb(0 0 0 / 20%)" required>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="Proje_Tipleri" class="form-label">Proje Tipi</label>
+                    <input type="text" class="form-control" id="Proje_Tipleri" name="Proje_Tipleri" value="@Model.ProjeDto.Proje_Tipleri" style="background-color:rgb(0 0 0 / 20%)" ">
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="Yenileme Periyodu" class="form-label">Yenileme_Periyodu</label>
+                    <input type="text" class="form-control" id="Proje_Tipleri" name="Yenileme_Periyodu" value="@Model.ProjeDto.Yenileme_Periyodu" style="background-color:rgb(0 0 0 / 20%)">
+                </div>
+
+                <hr class="my-4">
+
+                <div class="col-sm-6">
+                    <label for="Domain_Adi" class="form-label">Domain Adı</label>
+                    <input type="text" class="form-control" id="Domain_Adi" name="Domain_Adi" value="@Model.ProjeDto.Domain_Adi" style="background-color:rgb(0 0 0 / 20%)">
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="Domain_Bitis_Tarihi" class="form-label">Domain Bitiş Tarihi</label>
+                    <input type="date" class="form-control" id="Domain_Bitis_Tarihi" name="Domain_Bitis_Tarihi" value="@Model.ProjeDto.Domain_Bitis_Tarihi" style="background-color:rgb(0 0 0 / 20%)">
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="Domain_Fiyati" class="form-label">Domain Fiyatı</label>
+                    <input type="text" class="form-control" id="Domain_Fiyati" name="Domain_Fiyati" value="@Model.ProjeDto.Domain_Fiyati" style="background-color:rgb(0 0 0 / 20%)">
+                </div>
+
+                <hr class="my-4">
+
+                <div class="col-sm-6">
+                    <label for="Sunucu" class="form-label">Sunucu</label>
+                    <input type="text" class="form-control" id="Sunucu" name="Sunucu" value="@Model.ProjeDto.Sunucu" style="background-color:rgb(0 0 0 / 20%)">
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="Sunucu_Bitis_Tarihi" class="form-label">Sunucu Bitiş Tarihi</label>
+                    <input type="date" class="form-control" id="Sunucu_Bitis_Tarihi" name="Sunucu_Bitis_Tarihi" value="@Model.ProjeDto.Sunucu_Bitis_Tarihi" style="background-color:rgb(0 0 0 / 20%)">
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="Sunucu_Fiyati" class="form-label">Sunucu Fiyatı</label>
+                    <input type="text" class="form-control" id="Sunucu_Fiyati" name="Sunucu_Fiyati" value="@Model.ProjeDto.Sunucu_Fiyati" style="background-color:rgb(0 0 0 / 20%)">
+                </div>
+
+                <hr class="my-4">
+
+                <!--<h4 class="mb-3">SSL Var Mı ?</h4>-->
+
+                <div class="my-3">
+                    <div class="form-check">
+                        <label for="SSL" class="form-label">SSL Var Mı ?</label><br />
+                        <input id="sslvar" value="1" name="SSL" type="radio" class="form-check-input">
+                        <label class="form-check-label" for="var">Var</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input id="sslyok" value="0" name="SSL" type="radio" class="form-check-input">
+                        <label class="form-check-label" for="yok">Yok</label>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="SSL_Bitis_Tarihi" class="form-label">SSL Bitiş Tarihi</label>
+                    <input type="date" class="form-control" id="SSL_Bitis_Tarihi" name="SSL_Bitis_Tarihi" value="@Model.ProjeDto.SSL_Bitis_Tarihi" style="background-color:rgb(0 0 0 / 20%)">
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="SSL_Fiyati" class="form-label">SSL Fiyatı</label>
+                    <input type="text" class="form-control" id="SSL_Fiyatı" name="SSL_Fiyati" value="@Model.ProjeDto.SSL_Fiyati" style="background-color:rgb(0 0 0 / 20%)">
+                </div>
+
+                <hr class="my-4">
+
+                <div class="col-sm-6">
+                    <label for="Statik_IP" class="form-label">Statik IP</label>
+                    <input type="text" class="form-control" id="Statik_Ip" name="Statik_IP" value="@Model.ProjeDto.Statik_IP" style="background-color:rgb(0 0 0 / 20%)">
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="Statik_IP_Fiyati" class="form-label">Statik IP Fiyatı</label>
+                    <input type="text" class="form-control" id="Statik_IP_Fiyati" name="Statik_IP_Fiyati" value="@Model.ProjeDto.Statik_IP_Fiyati" style="background-color:rgb(0 0 0 / 20%)">
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="Metin" class="form-label">Not</label>
+                    <input type="text" class="form-control" id="Metin" name="Metin" value="@Model.ProjeDto.Metin" style="background-color:rgb(0 0 0 / 20%)">
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-primary btn-lg" id="UpdateProject" type="submit">GÜNCELLE</button>
+        </form>
+    </div>
+</form>
+
+@section scripts{
+    
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            if (("@Model.ProjeDto.SSL").toString() != "False") {
+                $('#sslvar').prop("checked", true);
+                $('#SSL_Bitis_Tarihi').prop("disabled", false);
+                $('#SSL_Fiyatı').prop("disabled", false);S
+            } else {
+                $('#sslyok').prop("checked", true);
+                $('#SSL_Bitis_Tarihi').prop("disabled", true);
+                $('#SSL_Fiyatı').prop("disabled", true);
+
+            }
+
+        });
+
+    </script>
+}
